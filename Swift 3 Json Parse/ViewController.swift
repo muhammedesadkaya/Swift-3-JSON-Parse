@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tblView: UITableView!
+    var myTitleArray = [String]()
     
     override func viewDidLoad()
     {
@@ -16,7 +19,7 @@ class ViewController: UIViewController {
         
         let urlString = "http://www.bucayapimarket.com/json.php";
         let myurl = URL(string: urlString)
-        var myTitleArray = [String]()
+        
         
         let task = URLSession.shared.dataTask(with: myurl!) { (data, response, error) in
             
@@ -36,11 +39,19 @@ class ViewController: UIViewController {
                         {
                             if let titles = jsonDic[i] as? NSDictionary
                             {
-                                myTitleArray.append(titles["baslik"] as? NSString! as! String)
+                                if let titleArray = titles["baslik"] as? String
+                                {
+                                    self.myTitleArray.append(titleArray)
+                                }
                             }
                         }
-                        print(myTitleArray)
+                        print(self.myTitleArray)
                     }
+                    DispatchQueue.main.async {
+                        self.tblView.reloadData()
+                    }
+                    
+                    
                 }
                 catch
                 {
@@ -49,6 +60,7 @@ class ViewController: UIViewController {
             }
         }
         task.resume()
+        
     }
     
     
@@ -58,5 +70,29 @@ class ViewController: UIViewController {
     }
     
     
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return myTitleArray.count
+    }
+    
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CampaignTableViewCell
+        
+        cell.titleLable.text = myTitleArray[indexPath.row]
+        cell.timeLabel.text = "3 days"
+        
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Row selected")
+    }
 }
 
