@@ -27,9 +27,15 @@ class ViewController: UIViewController {
             {
                 do
                 {
-                    let myjson = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray
+                    let myJson = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray
                     
-                    print(myjson)
+                    for i in 0...5
+                    {
+                        
+                        let jsonDic = myJson[i] as! NSDictionary
+                        
+                        print(jsonDic["baslik"] as! NSString)
+                    }
                 }
                 catch
                 {
