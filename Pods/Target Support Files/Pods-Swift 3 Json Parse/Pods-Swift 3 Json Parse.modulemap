@@ -1,0 +1,6 @@
+framework module Pods_Swift_3_Json_Parse {
+  umbrella header "Pods-Swift 3 Json Parse-umbrella.h"
+
+  export *
+  module * { export * }
+}

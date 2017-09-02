@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		119BF39C1A9F6A41F3FEDFD5 /* Pods_Swift_3_Json_Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E7BE7123915A8FC0C9C636 /* Pods_Swift_3_Json_Parse.framework */; };
 		204D9E9C1F5A29A7005C162E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204D9E9B1F5A29A7005C162E /* AppDelegate.swift */; };
 		204D9E9E1F5A29A7005C162E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204D9E9D1F5A29A7005C162E /* ViewController.swift */; };
 		204D9EA11F5A29A7005C162E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204D9E9F1F5A29A7005C162E /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11E7BE7123915A8FC0C9C636 /* Pods_Swift_3_Json_Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_3_Json_Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D9E981F5A29A7005C162E /* Swift 3 Json Parse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift 3 Json Parse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D9E9B1F5A29A7005C162E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		204D9E9D1F5A29A7005C162E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		204D9EA51F5A29A7005C162E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		204D9EA71F5A29A7005C162E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		204D9EAD1F5A3ED9005C162E /* CampaignTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignTableViewCell.swift; sourceTree = "<group>"; };
+		44025B2F3A0C2D97EF01FABE /* Pods-Swift 3 Json Parse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift 3 Json Parse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift 3 Json Parse/Pods-Swift 3 Json Parse.release.xcconfig"; sourceTree = "<group>"; };
+		DA976148159AF56CD97EA648 /* Pods-Swift 3 Json Parse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift 3 Json Parse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift 3 Json Parse/Pods-Swift 3 Json Parse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119BF39C1A9F6A41F3FEDFD5 /* Pods_Swift_3_Json_Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				204D9E9A1F5A29A7005C162E /* Swift 3 Json Parse */,
 				204D9E991F5A29A7005C162E /* Products */,
+				90420CDCE19521C7ADED2965 /* Pods */,
+				9CA90311CAD4A7B72D6BB686 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = "Swift 3 Json Parse";
 			sourceTree = "<group>";
 		};
+		90420CDCE19521C7ADED2965 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA976148159AF56CD97EA648 /* Pods-Swift 3 Json Parse.debug.xcconfig */,
+				44025B2F3A0C2D97EF01FABE /* Pods-Swift 3 Json Parse.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9CA90311CAD4A7B72D6BB686 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11E7BE7123915A8FC0C9C636 /* Pods_Swift_3_Json_Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 204D9EAA1F5A29A7005C162E /* Build configuration list for PBXNativeTarget "Swift 3 Json Parse" */;
 			buildPhases = (
+				32398F4410DFBB136995B10A /* [CP] Check Pods Manifest.lock */,
 				204D9E941F5A29A7005C162E /* Sources */,
 				204D9E951F5A29A7005C162E /* Frameworks */,
 				204D9E961F5A29A7005C162E /* Resources */,
+				206D1380C28B3ADF87F27D8A /* [CP] Embed Pods Frameworks */,
+				62A5F057BDD4661C79174610 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		206D1380C28B3ADF87F27D8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swift 3 Json Parse/Pods-Swift 3 Json Parse-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift 3 Json Parse/Pods-Swift 3 Json Parse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32398F4410DFBB136995B10A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swift 3 Json Parse-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62A5F057BDD4661C79174610 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift 3 Json Parse/Pods-Swift 3 Json Parse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		204D9E941F5A29A7005C162E /* Sources */ = {
@@ -262,6 +345,7 @@
 		};
 		204D9EAB1F5A29A7005C162E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA976148159AF56CD97EA648 /* Pods-Swift 3 Json Parse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Swift 3 Json Parse/Info.plist";
@@ -274,6 +358,7 @@
 		};
 		204D9EAC1F5A29A7005C162E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44025B2F3A0C2D97EF01FABE /* Pods-Swift 3 Json Parse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Swift 3 Json Parse/Info.plist";

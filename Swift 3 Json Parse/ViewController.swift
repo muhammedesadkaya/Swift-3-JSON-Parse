@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tblView: UITableView!
+    
     var myTitleArray = [String]()
+    var myImagesArray = [String]()
+
     
     override func viewDidLoad()
     {
@@ -37,11 +40,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     {
                         for i in 0..<jsonDic.count
                         {
-                            if let titles = jsonDic[i] as? NSDictionary
+                            if let jsonObj = jsonDic[i] as? NSDictionary
                             {
-                                if let titleArray = titles["baslik"] as? String
+                                if let titleArray = jsonObj["baslik"] as? String
                                 {
                                     self.myTitleArray.append(titleArray)
+                                }
+                                if let ImageArray = jsonObj["resim"] as? String
+                                {
+                                    self.myImagesArray.append(ImageArray)
                                 }
                             }
                         }
@@ -50,8 +57,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     DispatchQueue.main.async {
                         self.tblView.reloadData()
                     }
-                    
-                    
                 }
                 catch
                 {
@@ -62,8 +67,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         task.resume()
         
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -89,10 +92,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 130
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row selected")
     }
 }
 
