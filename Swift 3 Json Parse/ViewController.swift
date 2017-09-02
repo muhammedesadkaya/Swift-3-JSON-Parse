@@ -9,13 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         let urlString = "http://www.bucayapimarket.com/json.php";
         let myurl = URL(string: urlString)
+        var myTitleArray = [String]()
         
         let task = URLSession.shared.dataTask(with: myurl!) { (data, response, error) in
             
@@ -27,14 +28,18 @@ class ViewController: UIViewController {
             {
                 do
                 {
-                    let myJson = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray
+                    let myJson = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSArray
                     
-                    for i in 0...5
+                    if let jsonDic = myJson
                     {
-                        
-                        let jsonDic = myJson[i] as! NSDictionary
-                        
-                        print(jsonDic["baslik"] as! NSString)
+                        for i in 0..<jsonDic.count
+                        {
+                            if let titles = jsonDic[i] as? NSDictionary
+                            {
+                                myTitleArray.append(titles["baslik"] as? NSString! as! String)
+                            }
+                        }
+                        print(myTitleArray)
                     }
                 }
                 catch
@@ -45,11 +50,13 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
-
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-            }
-
-
+    }
+    
+    
 }
 
